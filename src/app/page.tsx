@@ -184,7 +184,7 @@ export default function Home() {
                 width="100"
                 height="40"
                 viewBox="0 0 100 40"
-                style={{ stroke: "var(--color-black)", fill: "none", strokeWidth: 2 }}
+                className="section-arrow"
                 aria-hidden="true"
               >
                 <path d="M0,20 Q50,0 90,20 L80,10 M90,20 L80,30" />
@@ -265,9 +265,7 @@ export default function Home() {
             <a href="#">Instagram</a>
             <a href="#">Contact</a>
           </div>
-          <p style={{ marginTop: 40, opacity: 0.5, fontSize: 12 }}>
-            © 2026 Arbatai London Ltd.
-          </p>
+          <p className="footer-copy">© 2026 Arbatai London Ltd.</p>
         </div>
       </footer>
     </>
