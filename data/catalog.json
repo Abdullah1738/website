@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "updatedAt": "2026-02-10T00:00:00.000Z",
+  "categories": [
+    {
+      "id": "berry-blends",
+      "name": "Berry Blends",
+      "createdAt": "2026-02-10T00:00:00.000Z"
+    },
+    {
+      "id": "herbal",
+      "name": "Herbal",
+      "createdAt": "2026-02-10T00:00:00.000Z"
+    },
+    {
+      "id": "wellness",
+      "name": "Wellness",
+      "createdAt": "2026-02-10T00:00:00.000Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "misko-uogos",
+      "categoryId": "berry-blends",
+      "name": "Miško Uogos",
+      "description": "Forest berries & black tea blend.",
+      "priceLabel": "£12.00",
+      "imageUrl": "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?q=80&w=2670&auto=format&fit=crop",
+      "imageAlt": "Forest Berry Tea",
+      "badgeText": "New",
+      "badgeVariant": "default",
+      "createdAt": "2026-02-10T00:00:00.000Z"
+    },
+    {
+      "id": "ramuneles",
+      "categoryId": "herbal",
+      "name": "Ramunėlės",
+      "description": "Whole flower chamomile calming set.",
+      "priceLabel": "£10.50",
+      "imageUrl": "https://images.unsplash.com/photo-1563911302283-d2bc129e7c1f?q=80&w=2670&auto=format&fit=crop",
+      "imageAlt": "Chamomile Tea",
+      "createdAt": "2026-02-10T00:00:00.000Z"
+    },
+    {
+      "id": "ciobreliai",
+      "categoryId": "wellness",
+      "name": "Čiobreliai",
+      "description": "Wild thyme for immune support.",
+      "priceLabel": "£14.00",
+      "imageUrl": "https://images.unsplash.com/photo-1576092768241-dec231847233?q=80&w=2574&auto=format&fit=crop",
+      "imageAlt": "Thyme Tea",
+      "badgeText": "Hot",
+      "badgeVariant": "hot",
+      "createdAt": "2026-02-10T00:00:00.000Z"
+    }
+  ]
+}

@@ -1,42 +1,5 @@
-import Image from "next/image";
-
-type Product = {
-  name: string;
-  description: string;
-  price: string;
-  imageUrl: string;
-  imageAlt: string;
-  badge?: { text: string; variant?: "default" | "hot" };
-};
-
-const products: Product[] = [
-  {
-    name: "Miško Uogos",
-    description: "Forest berries & black tea blend.",
-    price: "£12.00",
-    imageUrl:
-      "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?q=80&w=2670&auto=format&fit=crop",
-    imageAlt: "Forest Berry Tea",
-    badge: { text: "New" },
-  },
-  {
-    name: "Ramunėlės",
-    description: "Whole flower chamomile calming set.",
-    price: "£10.50",
-    imageUrl:
-      "https://images.unsplash.com/photo-1563911302283-d2bc129e7c1f?q=80&w=2670&auto=format&fit=crop",
-    imageAlt: "Chamomile Tea",
-  },
-  {
-    name: "Čiobreliai",
-    description: "Wild thyme for immune support.",
-    price: "£14.00",
-    imageUrl:
-      "https://images.unsplash.com/photo-1576092768241-dec231847233?q=80&w=2574&auto=format&fit=crop",
-    imageAlt: "Thyme Tea",
-    badge: { text: "Hot", variant: "hot" },
-  },
-];
+import ProductsSection from "@/components/ProductsSection";
+import { getPublicCatalog } from "@/lib/catalog/public";
 
 type StoryItem = {
   title: string;
@@ -105,7 +68,8 @@ const story: StoryItem[] = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const { categories, products } = await getPublicCatalog();
   return (
     <>
       <nav aria-label="Primary">
@@ -177,62 +141,7 @@ export default function Home() {
       </header>
 
       <main>
-        <section className="products-section" id="shop">
-          <div className="container">
-            <div className="section-header">
-              <h2 className="section-title">Rituals from the Homeland</h2>
-            </div>
-
-            <div className="filter-row" role="group" aria-label="Tea filters">
-              <button className="filter-btn" type="button" aria-pressed="true">
-                All Teas
-              </button>
-              <button className="filter-btn" type="button" aria-pressed="false">
-                Berry Blends
-              </button>
-              <button className="filter-btn" type="button" aria-pressed="false">
-                Herbal
-              </button>
-              <button className="filter-btn" type="button" aria-pressed="false">
-                Wellness
-              </button>
-            </div>
-
-            <div className="product-grid">
-              {products.map((p, idx) => (
-                <article className="product-card" key={p.name}>
-                  <div className="card-image-wrapper">
-                    {p.badge ? (
-                      <div
-                        className={`card-sticker${p.badge.variant === "hot" ? " hot" : ""}`}
-                      >
-                        {p.badge.text}
-                      </div>
-                    ) : null}
-                    <Image
-                      src={p.imageUrl}
-                      alt={p.imageAlt}
-                      fill
-                      className="card-img"
-                      priority={idx === 0}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  </div>
-                  <div className="product-info">
-                    <div>
-                      <h3 className="product-name">{p.name}</h3>
-                      <p className="product-desc">{p.description}</p>
-                    </div>
-                    <span className="product-price">{p.price}</span>
-                  </div>
-                  <button className="add-btn" type="button">
-                    Add to Basket
-                  </button>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ProductsSection categories={categories} products={products} />
 
         <section className="story-section" id="roots">
           <div className="container">
