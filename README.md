@@ -19,6 +19,18 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 Main page: `src/app/page.tsx`  
 Styles: `src/app/globals.css`
 
+## Backoffice / Inventory
+
+Inventory (categories/products) is stored in Turso (libSQL).
+
+Create a `.env.local` (see `.env.example`) with:
+
+- `BACKOFFICE_PASSWORD`
+- `TURSO_DATABASE_URL`
+- `TURSO_AUTH_TOKEN`
+
+Backoffice: `http://localhost:3000/backoffice`
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
